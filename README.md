@@ -1,2 +1,2 @@
 # mail-auth-dc
-(discord.js) discord bot for email auth and role assignment
+(discord.py) discord bot for email auth and role assignment
