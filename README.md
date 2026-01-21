@@ -1,4 +1,4 @@
-### mail-auth-dc
+# mail-auth-dc
 
 Discord bot (discord.py) that verifies a user’s email for a specific domain and assigns a role.
 
