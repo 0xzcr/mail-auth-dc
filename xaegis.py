@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 dc_token = os.getenv('DISCORD_TOKEN')
 domain = os.getenv('ALLOWED_DOMAIN')
 guild_id = int(os.getenv('GUILD_ID') or "0")
@@ -19,6 +20,8 @@ smtp_port = int(os.getenv('SMTP_PORT') or "587")
 smtp_user = os.getenv('SMTP_USER')
 smtp_pass = os.getenv('SMTP_PASS')
 from_email = os.getenv('FROM_EMAIL')
+
+
 
 intents = discord.Intents.default()
 intents.members = True
@@ -68,6 +71,9 @@ async def verify(ctx):
             mention_author=False,
         )
 
+
+
+
 @bot.event
 async def on_message(message):
     await bot.process_commands(message) #process commands first
@@ -111,7 +117,7 @@ async def on_message(message):
         await user.send(f"I’ve sent a verification code to `{content}`. Reply here with the code.")
         return
 
-    # Step 2: Validate code and assign role
+    #validate and assign code
     expected = pending_verification[user.id]["code"]
     if content != expected:
         await user.send("Incorrect code. Please try again (or run `!verify` again to restart).")
